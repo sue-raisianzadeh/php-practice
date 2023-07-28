@@ -158,7 +158,13 @@ echo deBee($sentence) ."<br>"; // Output: "I'm with excitement for the weekend!"
 
 <?php
 function whereAreYou($arrayOfObjects) {
-  return array_filter($arrayOfObjects, fn($object) => $object->hiding === "Scooby")[0];
+  // Find the first object that “Scooby” is hiding within.
+  foreach ($arrayOfObjects as $object) {
+      if ($object->hiding === "Scooby") {
+          return $object;
+      }
+  }
+  return null; // If "Scooby" is not found, return null.
 }
 
 $objects = [
@@ -167,7 +173,15 @@ $objects = [
   (object)["hiding" => "Velma"]
 ];
 
-echo whereAreYou($objects); // Output: {"hiding": "Scooby"}
+$result = whereAreYou($objects);
+
+if ($result) {
+  echo "<pre>";
+  print_r($result);
+  echo "</pre>";
+} else {
+  echo "Scooby is not hiding in any object.";
+}
 
 ?>
 
@@ -182,11 +196,7 @@ $santa = [
   "quote" => "I am not paid enough for this"
 ];
 
-// Add Santa to the athleteArray
-$athleteArray[] = $santa;
-
 array_push($athleteArray, $santa);
-
 // to see output on the browser
 var_dump($athleteArray);
 
@@ -199,13 +209,13 @@ echo "</pre>";
 // 1.1 Use a for loop to add a property called win to every element in athleteArray. 
 // win should be a function expression with no parameters that console logs: "{name} won the {sport} event!"
 for ($i = 0; $i < count($athleteArray); $i++) {
-  $athleteArray[$i]["win"] = function() use ($athleteArray, $i) {
-    // Use echo instead of print_r to display the output directly in the browser
-    echo "{$athleteArray[$i]["name"]} won the {$athleteArray[$i]["sport"]} event!";
+  $athleteArray[$i]->win = function () use ($athleteArray, $i) {
+    echo "{$athleteArray[$i]->name} won the {$athleteArray[$i]->sport} event!";
   };
 }
 
-// Now you can call the "win" function for each athlete to see the output
-foreach ($athleteArray as $athlete) {
-  $athlete["win"]();
-}
+// Now, to call the win function for a specific athlete, you can do the following:
+$athleteArray[0]->win(); // Output: "Santa won the delivery event!"
+
+
+
