@@ -185,37 +185,3 @@ if ($result) {
 
 ?>
 
-<?php
-// 1 Add santa to the athlete array
-$athleteArray = [];
-
-$santa = [
-  "name" => "Santa",
-  "age" => "1748",
-  "sport" => "delivery",
-  "quote" => "I am not paid enough for this"
-];
-
-array_push($athleteArray, $santa);
-// to see output on the browser
-var_dump($athleteArray);
-
-// it only can show on the web server
-echo "<pre>";
-print_r($athleteArray);
-echo "</pre>";
-
-
-// 1.1 Use a for loop to add a property called win to every element in athleteArray. 
-// win should be a function expression with no parameters that console logs: "{name} won the {sport} event!"
-for ($i = 0; $i < count($athleteArray); $i++) {
-  $athleteArray[$i]->win = function () use ($athleteArray, $i) {
-    echo "{$athleteArray[$i]->name} won the {$athleteArray[$i]->sport} event!";
-  };
-}
-
-// Now, to call the win function for a specific athlete, you can do the following:
-$athleteArray[0]->win(); // Output: "Santa won the delivery event!"
-
-
-
