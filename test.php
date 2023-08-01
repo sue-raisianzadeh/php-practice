@@ -49,7 +49,7 @@ $scores = [
     [75, 70, 80, 75], // Wiremu's score
     [100, 90, 95, 85], // Elizabeth's score
 ];
-$gradebook = array();
+$gradebook = [];
 foreach ($students as $index => $student) {
     $gradebook[$student] = array('testScores' => ($scores[$index]));
 }
@@ -184,4 +184,37 @@ if ($result) {
 }
 
 ?>
+
+<!-- Given two numbers, return true if the sum of both numbers is less than 100. Otherwise return false. -->
+<?php
+ function smallest100($num1, $num2){
+if ($num1 + $num2 <100){
+  return true;
+}else{
+  return false;
+};
+};
+ $result= smallest100(60,45);
+ echo $result ? 'true' : 'false';
+?>
+<!-- //  Write a function that returns the string "something" joined with a space " " and the given argument a. -->
+ <?php
+function joinwithspace($str){
+  return "something" . $str;
+}
+echo joinwithspace('example');
+
+// Write a function that takes the base and height of a triangle and return its area.
+
+function triangle($base, $height){
+  return $base * $height / 2;
+}
+
+echo triangle(20, 30);
+
+
+
+
+
+
 
