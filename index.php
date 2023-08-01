@@ -74,3 +74,38 @@ function newAthlete ($name, $age, $sport, $quote) {
   $athlete = newAthlete('John Doe', 25, 'Basketball', 'I am the greatest!');
 print_r($athlete);
 
+// Create a function that finds the maximum range of a triangle's third edge, where the side lengths are all integers.
+function maxtraight($ege1, $ege2, $ege3){
+  return ($ege1 + $ege2 )-1;
+}
+echo maxtraight (20, 30, 15);
+
+// Create a function that takes a list of numbers and returns the second largest number.
+
+$numbers=[1,2,3,4,5,6];
+
+function secondLargestNumber($numbers) {
+  // Sort the array in descending order
+  rsort($numbers);
+
+  // Return the second element (index 1) of the sorted array
+  return $numbers[1];
+}
+
+// $numbers = [1, 2, 3, 4, 5, 6];
+echo     secondLargestNumber($numbers) ;  // Output: 5
+
+// Your task is to create a Circle constructor that creates a circle with
+//  a radius provided by an argument. The circles constructed must have two getters getArea() (PI*r^2) 
+// and getPerimeter() (2*PI*r) which give both respective areas and perimeter (circumference).
+
+Please use PHP and our API to output a list of domains that customer #293785 has onto a
+page which is viewable via a web browser. The SSH details required should have already
+been emailed to you.
+This is an open book test so please feel free to use the internet. Good luck.
+Demo API:
+API Server: https://api.demo.sitehost.co.nz
+API Version: 1.0
+API Key: d17261d51ff7046b760bd95b4ce781ac
+Client ID: 293785
+Formats: json or xml
