@@ -111,8 +111,9 @@ Best regards,
 
 Mike
 
+ssh [username]@[host]
 
-http://sr20230731.120.138.30.206.sth.nz/developer-challenge-1.pdf
+ssh sr20230731@120.138.30.206.sth.nz
 
 
 http://sr20230731.120.138.30.206.sth.nz/developer-challenge-1.pdf
