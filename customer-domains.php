@@ -111,3 +111,9 @@ Best regards,
 
 Mike
 
+
+http://sr20230731.120.138.30.206.sth.nz/developer-challenge-1.pdf
+
+
+http://sr20230731.120.138.30.206.sth.nz/developer-challenge-1.pdf
+
