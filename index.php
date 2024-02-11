@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 // 1 Add santa to the athlete array
 $athleteArray = [];
 
@@ -20,15 +23,19 @@ echo "</pre>";
 
 
 // 1.1 Use a for loop to add a property called win to every element in athleteArray. 
-// win should be a function expression with no parameters that console logs: "{name} won the {sport} event!"
+// win should be a function expression with no parameters 
+//that console logs: "{name} won the {sport} event!"
 for ($i = 0; $i < count($athleteArray); $i++) {
-  $athleteArray[$i]['win'] = function () use ($athleteArray, $i) {
-    echo "{$athleteArray[$i]['name']} won the {$athleteArray[$i]['sport']} event!";
+  $athleteArray[$i]['win'] = function() use ($athleteArray, $i) {
+      echo $athleteArray[$i]['name'] . " won the " . $athleteArray[$i]['sport'] . " event!";
   };
 }
 
-// Now, to call the win function for a specific athlete, you can do the following:
-$athleteArray[0]['win'](); // Output: "Santa won the delivery event!"
+// Now, to call the win function for a specific athlete, you can use call_user_func
+if (is_callable($athleteArray[0]['win'])) {
+  call_user_func($athleteArray[0]['win']); // Output: "Santa won the delivery event!"
+}
+
 
 
 // 2.1 Complete the unjumble function, which accepts a string as an argument and reverses it,
@@ -94,7 +101,7 @@ function secondLargestNumber($numbers) {
 
 // $numbers = [1, 2, 3, 4, 5, 6];
 echo     secondLargestNumber($numbers) ;  // Output: 5
-
+?>
 // Your task is to create a Circle constructor that creates a circle with
 //  a radius provided by an argument. The circles constructed must have two getters getArea() (PI*r^2) 
 // and getPerimeter() (2*PI*r) which give both respective areas and perimeter (circumference).
